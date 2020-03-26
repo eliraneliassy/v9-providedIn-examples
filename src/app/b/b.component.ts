@@ -1,5 +1,6 @@
-import { StoreService } from './../store.service';
+
 import { Component, OnInit } from '@angular/core';
+import {StoreService} from 'store';
 
 @Component({
   selector: 'app-b',
