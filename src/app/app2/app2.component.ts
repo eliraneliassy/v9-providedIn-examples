@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ApplicationRef } from '@angular/core';
 import { StoreService } from '../store.service';
+import { TOUCH_BUFFER_MS } from '@angular/cdk/a11y';
 
 @Component({
   selector: 'app-app2',
@@ -10,12 +11,14 @@ export class App2Component implements OnInit {
 
   counter: number;
 
-  constructor(private store: StoreService) { }
-
-  ngOnInit(): void {
+  constructor(private store: StoreService) {
     this.store.getCounter().subscribe((counter: number) => {
       this.counter = counter;
     });
+  }
+
+  ngOnInit(): void {
+
   }
 
   plus() {
