@@ -20,7 +20,7 @@ export class AComponent implements OnInit {
     ng g lib store
     ng g s store --project=store
   `;
-  
+
   constructor(private store: StoreService) { }
 
   ngOnInit(): void {
