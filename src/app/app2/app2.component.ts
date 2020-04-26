@@ -10,11 +10,12 @@ import { TOUCH_BUFFER_MS } from '@angular/cdk/a11y';
 export class App2Component implements OnInit {
 
   counter: number;
-
-  constructor(private store: StoreService) {
+  constructor(private store: StoreService, private appRef: ApplicationRef) {
     this.store.getCounter().subscribe((counter: number) => {
       this.counter = counter;
+      this.appRef.tick();
     });
+
   }
 
   ngOnInit(): void {
@@ -23,10 +24,6 @@ export class App2Component implements OnInit {
 
   plus() {
     this.store.setCounter(this.counter + 1);
-  }
-
-  reset() {
-    this.store.setCounter(0);
   }
 
 }
