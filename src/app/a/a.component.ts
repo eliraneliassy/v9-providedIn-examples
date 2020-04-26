@@ -17,10 +17,13 @@ export class AComponent implements OnInit {
   `;
 
   step2 = `
-    ng g lib store
-    ng g s store --project=store
+    ng g s store
   `;
-  
+
+  step3 = `
+    constructor(private store: StoreService) { }
+  `;
+
   constructor(private store: StoreService) { }
 
   ngOnInit(): void {
